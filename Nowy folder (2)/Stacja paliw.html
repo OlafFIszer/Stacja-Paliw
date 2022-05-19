@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="134.css"/>
+    <title>Stacja Paliw</title>
+</head>
+<body class="stacja">
+    <h1 class="h1">Stacja Paliw</h1>
+    <h3>CENA PALIWA</h3>
+    <h5>RODZAJ PALIWA</h5>
+    
+    <input type="radio" id="Benzyna"
+    name="123" value="paliwo" checked>
+   <label for="Benzyna">Benzyna</label>
+
+   <input type="radio" id="Ropa"
+    name="123" value="paliwo">
+   <label for="Ropa">Ropa</label>
+    <p></p>
+    <label for="Litry">Ilość litrów</label>
+    <input type="number" name="" id="Litry">
+    <button onclick="oblicz()">Oblicz</button>
+    <p id="wynik"> </p>
+    <script>
+        function oblicz()
+        {
+            var rodzaj = document.getElementById('Litry').value;
+            rodzaj = parseInt(rodzaj);
+            let G = document.getElementById('Benzyna').checked;
+            let D = document.getElementById('Ropa').checked;
+            var ilosc = document.getElementById('Litry').value;
+            ilosc = parseInt(ilosc);
+            var koszt;
+            if (G == true){
+                let rodzaj = ilosc * 6.7;
+                document.getElementById('wynik').innerHTML = "koszt paliwa " + rodzaj + "zł"
+            }
+            else if (D == true){
+                let rodzaj = ilosc * 7.5;
+                document.getElementById('wynik').innerHTML = "koszt paliwa " + rodzaj + "zł"
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
